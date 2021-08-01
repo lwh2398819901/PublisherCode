@@ -32,7 +32,25 @@ namespace publisherFunc {
 #define int2Eunm(_intNum,Type) static_cast<decltype(Type)>(_intNum)
 #define enumAddInt(_enum,_intNum) int2Eunm(enum2Int(_enum)+_intNum,_enum)
 
-//成员函数
+//添加简单的getSet成员函数
+/********************
+class Test{
+private:
+    int size;
+    string name;
+public:
+    getSetFunc(Size,size)
+    getSetFunc(Name,name)
+};
+
+Test t;
+string name = t.Name();
+int size = t.Size();
+const string name2 = t.Name();
+const int size2 = t.Size();
+t.setName("test");
+t.setSize(123);
+********************/
 #define getSetFunc(funcName, memVar)\
     decltype (memVar) funcName(){return memVar;}\
     decltype (memVar) funcName()const{return memVar;}\
